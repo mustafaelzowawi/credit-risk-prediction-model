@@ -1,0 +1,12 @@
+Flask
+flask-login
+flask-wtf
+SQLAlchemy
+psycopg2-binary 
+bcrypt
+Pandas
+NumPy
+Scikit-learn
+XGBoost
+Matplotlib
+Seaborn
