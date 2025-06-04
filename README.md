@@ -11,7 +11,6 @@ A comprehensive end-to-end machine learning pipeline that transforms raw borrowe
 - [Getting Started](#-getting-started)
 - [Usage Examples](#-usage-examples)
 - [Production Deployment](#-production-deployment)
-- [Contributing](#-contributing)
 
 ## 🎯 Project Introduction
 
@@ -239,7 +238,7 @@ credit-risk-prediction-model/
 │   └── test_ml_model.py        # Model tests
 ├── 📋 requirements.txt         # Python dependencies
 ├── 📖 README.md               # Project documentation
-└── 📄 LICENSE                 # MIT License
+└── 📄 LICENSE                 # Apache 2.0 License
 ```
 
 ## 🚀 Getting Started
@@ -461,58 +460,7 @@ flake8==6.0.0
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🤝 Contributing
-
-We welcome contributions! Please follow these steps:
-
-1. **Fork the repository**
-2. **Create a feature branch**: `git checkout -b feature/improvement`
-3. **Make your changes**
-4. **Add tests**: Ensure new code is properly tested
-5. **Run the test suite**: `pytest tests/`
-6. **Commit changes**: `git commit -am 'Add improvement'`
-7. **Push to branch**: `git push origin feature/improvement`
-8. **Create Pull Request**
-
-### Contribution Guidelines
-- Follow PEP 8 style guidelines
-- Add docstrings to all functions
-- Write comprehensive tests
-- Update documentation as needed
-
-## 📧 Contact & Support
-
-For questions, issues, or collaboration opportunities:
-
-- **Issues**: [GitHub Issues](https://github.com/yourusername/credit-risk-prediction-model/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/credit-risk-prediction-model/discussions)
-
----
-
-## 🎯 Project Roadmap
-
-### Completed ✅
-- [x] Comprehensive EDA and data understanding
-- [x] Advanced data preprocessing pipeline
-- [x] Feature engineering and selection
-- [x] Model training and hyperparameter tuning
-- [x] Production-ready prediction pipeline
-- [x] Model persistence and versioning
-
-### In Progress 🚧
-- [ ] Flask web application development
-- [ ] Model performance monitoring dashboard
-- [ ] Automated model retraining pipeline
-
-### Future Enhancements 🔮
-- [ ] Advanced explainability (SHAP values)
-- [ ] Bias detection and mitigation
-- [ ] Alternative credit scoring approaches
-- [ ] Real-time streaming predictions
-- [ ] Docker containerization
-- [ ] Cloud deployment (AWS/GCP/Azure)
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 
 ---
 
