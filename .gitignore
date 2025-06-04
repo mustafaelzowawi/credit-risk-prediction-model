@@ -1,10 +1,84 @@
 # Environment Variables
-config.py
 .env
+*.env
 
 # Python
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
 # Virtual Environment
 venv/
+env/
+ENV/
+.venv/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# Data files (large datasets)
+*.csv
+*.parquet
+*.h5
+*.hdf5
+*.pickle
+*.joblib
+data/raw/
+data/processed/
+data/external/
+
+# Model artifacts (exclude general pickle files but allow our trained models)
+*.pkl
+!models/credit_model.pkl
+!models/scaler.pkl
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Testing
+.coverage
+.pytest_cache/
+.tox/
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+htmlcov/
+
+# Documentation
+docs/_build/

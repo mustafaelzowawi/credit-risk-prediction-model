@@ -1,12 +1,15 @@
 Flask
 flask-login
 flask-wtf
+Flask-SQLAlchemy
 SQLAlchemy
 psycopg2-binary 
 bcrypt
+python-dotenv
 Pandas
 NumPy
 Scikit-learn
 XGBoost
 Matplotlib
 Seaborn
+imbalanced-learn
