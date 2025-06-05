@@ -120,21 +120,28 @@ The optimized XGBoost model (using `scale_pos_weight` only) achieved the followi
 ```
 credit-risk-prediction-model/
 ├── data/
-│   ├── raw/                    # Original dataset (cs-training.csv, etc.)
-│   └── processed/              # Cleaned and feature-engineered data (cleaned_data.csv, X_features.csv, y_target.csv)
+│   ├── raw/
+│   └── processed/
 ├── notebooks/
-│   ├── 01_Data_Exploration.ipynb     # Comprehensive EDA and initial insights.
-│   ├── 02_Data_Cleaning.ipynb        # Handles missing values, outliers, and data types.
-│   ├── 03_Feature_Engineering.ipynb  # Creates derived features (e.g., TotalPastDue, AgeGroup) and scales data.
-│   ├── 04_Model_Training.ipynb       # Trains, tunes (with scale_pos_weight), and evaluates models. Final model saved here.
-│   └── 05_Model_Deployment.ipynb     # Demonstrates loading the model & scaler, preprocessing new data, and making predictions (including credit score conversion).
+│   ├── 01_Data_Exploration.ipynb
+│   ├── 02_Data_Cleaning.ipynb
+│   ├── 03_Feature_Engineering.ipynb
+│   ├── 04_Model_Training.ipynb
+│   └── 05_Model_Deployment.ipynb
 ├── models/
-│   ├── credit_model.pkl        # Serialized trained XGBoost model.
-│   └── scaler.pkl              # Serialized fitted StandardScaler.
-├── images/                     # Directory for storing generated images (e.g., roc_curve_final.png, confusion_matrix_final.png, feature_importance_final.png, target_distribution.png).
-├── requirements.txt            # Python dependencies for reproducibility.
-├── README.md                   # This project documentation.
-└── LICENSE                     # Apache 2.0 License.
+│   ├── credit_model.pkl
+│   └── scaler.pkl
+├── src/
+│   └── predict.py              # Core script for preprocessing and prediction logic.
+├── images/
+│   ├── roc_curve_final.png
+│   ├── confusion_matrix_final.png
+│   ├── feature_importance_final.png
+│   └── target_distribution.png
+├── requirements.txt
+├── score.py                    # Command-line interface to score a new applicant.
+├── README.md
+└── LICENSE
 ```
 
 ## 🚀 Getting Started
@@ -162,25 +169,35 @@ credit-risk-prediction-model/
 
 ## ⚙️ Usage Example
 
-The core functionality for using the trained model to get predictions and a credit score is demonstrated in `notebooks/05_Model_Deployment.ipynb`. It includes:
-1.  Loading the trained XGBoost model (`credit_model.pkl`) and the `StandardScaler` (`scaler.pkl`).
-2.  A `preprocess_input` function that replicates all necessary feature engineering steps performed during training (e.g., creating `TotalPastDue`, handling missing income, binning age, scaling).
-3.  A `calculate_credit_score` function that takes raw input data (as a dictionary), preprocesses it, predicts the probability of default, and converts this probability into a 300-850 credit score using industry-standard logistic scaling.
+The primary way to use the trained model is via the command-line interface `score.py`. This script loads the trained model and scaler, preprocesses the input data, and returns a prediction for the probability of default and a corresponding credit score.
 
-**Example snippet (conceptual, see notebook for full implementation):**
-```python
-from notebooks.05_Model_Deployment import calculate_credit_score 
+### Command-Line Execution
+You can score a new applicant by providing their information as command-line arguments.
 
+**Example command:**
+```bash
+python score.py \
+    --revolving-utilization 0.5 \
+    --age 45 \
+    --past-due-30-59 1 \
+    --debt-ratio 0.3 \
+    --monthly-income 5000 \
+    --open-credit-lines 5 \
+    --past-due-90 0 \
+    --real-estate-loans 1 \
+    --past-due-60-89 0 \
+    --dependents 2
+```
 
-sample_input = {
-    'RevolvingUtilizationOfUnsecuredLines': 0.5, 'age': 45, 
-    'NumberOfTime30-59DaysPastDueNotWorse': 1, 'DebtRatio': 0.3, 
-    'MonthlyIncome': 5000.0, 'NumberOfOpenCreditLinesAndLoans': 5, 
-    'NumberOfTimes90DaysLate': 0, 'NumberRealEstateLoansOrLines': 1, 
-    'NumberOfTime60-89DaysPastDueNotWorse': 0, 'NumberOfDependents': 2.0
-}
+**Expected Output:**
+```
+--- Credit Score Prediction Result ---
+  Probability of Default: 53.01%
+  Predicted Credit Score: 309
+--------------------------------------
+```
 
-result = calculate_credit_score(sample_input)
-print(f"Probability of Default: {result['Probability of Default']}")
-print(f"Calculated Credit Score: {result['Credit Score']}")
+You can see all available options by running:
+```bash
+python score.py --help
 ```
