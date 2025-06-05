@@ -169,7 +169,8 @@ The core functionality for using the trained model to get predictions and a cred
 
 **Example snippet (conceptual, see notebook for full implementation):**
 ```python
-# from notebooks.05_Model_Deployment import calculate_credit_score # Or copy functions
+from notebooks.05_Model_Deployment import calculate_credit_score 
+
 
 sample_input = {
     'RevolvingUtilizationOfUnsecuredLines': 0.5, 'age': 45, 
@@ -179,7 +180,7 @@ sample_input = {
     'NumberOfTime60-89DaysPastDueNotWorse': 0, 'NumberOfDependents': 2.0
 }
 
-# result = calculate_credit_score(sample_input)
-# print(f"Probability of Default: {result['Probability of Default']}")
-# print(f"Calculated Credit Score: {result['Credit Score']}")
+result = calculate_credit_score(sample_input)
+print(f"Probability of Default: {result['Probability of Default']}")
+print(f"Calculated Credit Score: {result['Credit Score']}")
 ```
