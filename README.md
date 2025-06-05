@@ -4,7 +4,7 @@ Credit risk is the financial loss a lender faces when a borrower fails to meet t
 
 The model transforms raw borrower data into two key outputs: a precise **probability of default** and an intuitive, consumer-style **credit score (300-850)**, where a lower score signifies higher risk. It demonstrates a systematic approach to building and optimizing a high-performing classification model using the "Give Me Some Credit" Kaggle dataset (150,000 records). The focus is on the rigorous development of the predictive model, from data analysis to final evaluation, making it a strong showcase of applied machine learning skills for quantitative and technical roles.
 
-## 📋 Table of Contents
+## Table of Contents
 - [Key Achievements](#-key-achievements)
 - [Methodology Overview](#-methodology-overview)
   - [1. Exploratory Data Analysis (EDA)](#1-exploratory-data-analysis-eda)
@@ -12,6 +12,7 @@ The model transforms raw borrower data into two key outputs: a precise **probabi
   - [3. Feature Engineering](#3-feature-engineering)
   - [4. Model Development & Optimization](#4-model-development--optimization)
 - [Final Model Performance](#-final-model-performance)
+- [Credit Score Conversion](#-credit-score-conversion)
 - [Project Structure](#-project-structure)
 - [Getting Started](#-getting-started)
 - [Usage Example](#-usage-example)
@@ -86,23 +87,6 @@ The optimized XGBoost model (using `scale_pos_weight` only) achieved the followi
 
 *Note: Precision, Recall, and F1-Score are reported for the positive class (`SeriousDlqin2yrs = 1`), which is paramount for credit risk assessment.*
 
-### Credit Score Conversion
-The model's raw output is a probability of default. To make this more interpretable for business use, it is converted into a consumer-style credit score (300-850) using a standard logistic scaling formula.
-
-The score is calculated as follows:
-
-$$\text{Score} = \text{Offset} + \text{Factor} \times \ln(\text{Odds})$$
-
-**Where:**
-
-**Odds**: $\frac{1 - P(\text{Default})}{P(\text{Default})}$
-
-**Factor**: $\frac{\text{PDO}}{\ln(2)}$ (where PDO = 50, Points to Double the Odds)
-
-**Offset**: $\text{Base Score} - \text{Factor} \times \ln(\text{Base Odds})$ (Base Score = 600, Base Odds = 50)
-
-This transformation ensures that a higher probability of default logarithmically maps to a lower credit score, which is the industry standard.
-
 ### Visualizing Model Performance
 
 <p align="center">
@@ -129,7 +113,25 @@ This transformation ensures that a higher probability of default logarithmically
 9.  **`NumberOfTime60-89DaysPastDueNotWorse`** (Importance: ~0.018)
 10. **`DebtRatio`** (Importance: ~0.017)
 
-## 📁 Project Structure
+## Credit Score Conversion
+
+The model's raw output is a probability of default. To make this more interpretable for business use, it is converted into a consumer-style credit score (300-850) using a standard logistic scaling formula.
+
+The score is calculated as follows:
+
+$$\text{Score} = \text{Offset} + \text{Factor} \times \ln(\text{Odds})$$
+
+**Where:**
+
+**Odds**: $\frac{1 - P(\text{Default})}{P(\text{Default})}$
+
+**Factor**: $\frac{\text{PDO}}{\ln(2)}$ (where PDO = 50, Points to Double the Odds)
+
+**Offset**: $\text{Base Score} - \text{Factor} \times \ln(\text{Base Odds})$ (Base Score = 600, Base Odds = 50)
+
+This transformation ensures that a higher probability of default logarithmically maps to a lower credit score, which is the industry standard.
+
+## Project Structure
 
 ```
 credit-risk-prediction-model/
@@ -158,7 +160,7 @@ credit-risk-prediction-model/
 └── LICENSE
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 *   Python 3.8+
