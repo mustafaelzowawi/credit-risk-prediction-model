@@ -84,6 +84,19 @@ The optimized XGBoost model (using `scale_pos_weight` only) achieved the followi
 
 *Note: Precision, Recall, and F1-Score are reported for the positive class (`SeriousDlqin2yrs = 1`), which is paramount for credit risk assessment.*
 
+### Credit Score Conversion
+The model's raw output is a probability of default. To make this more interpretable for business use, it is converted into a consumer-style credit score (300-850) using a standard logistic scaling formula.
+
+The score is calculated as follows:
+\[ \text{Score} = \text{Offset} + (\text{Factor} \times \ln(\text{Odds})) \]
+
+Where:
+-   **Odds**: Calculated as `(1 - Probability of Default) / Probability of Default`.
+-   **Factor**: `Points to Double the Odds (PDO) / ln(2)`. A standard value for `PDO` is 50.
+-   **Offset**: `Base Score - (Factor × ln(Base Odds))`. A common `Base Score` is 600 at `Base Odds` of 50:1.
+
+This transformation ensures that a higher probability of default logarithmically maps to a lower credit score, which is the industry standard.
+
 ### Visualizing Model Performance
 
 <p align="center">
