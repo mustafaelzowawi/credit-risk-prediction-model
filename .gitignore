@@ -82,3 +82,4 @@ htmlcov/
 
 # Documentation
 docs/_build/
+export_images_guide.md

@@ -75,6 +75,9 @@ SeriousDlqin2yrs
 
 #### Target Variable Analysis
 The severe class imbalance required sophisticated handling:
+
+![Target Variable Distribution](images/target_distribution.png)
+
 ```
 Distribution Breakdown:
 ├── Non-Default (0): 140,030 records (93.32%)
@@ -117,6 +120,8 @@ Based on EDA findings, we implemented:
 ```
 
 ### 📊 Correlation Matrix Insights
+
+![Correlation Matrix](images/correlation_matrix.png)
 
 Key relationships discovered:
 - **Delinquency features highly correlated** with each other and target
@@ -195,18 +200,20 @@ Our tuned XGBoost model achieved excellent performance:
 | **Accuracy** | 0.92 |
 
 ### Feature Importance (Top 10)
-```
-1. RevolvingUtilizationOfUnsecuredLines    ████████████ 0.142
-2. age                                     ██████████   0.123
-3. NumberOfTime30-59DaysPastDueNotWorse   █████████    0.118
-4. DebtRatio                              ████████     0.095
-5. NumberOfTimes90DaysLate                ███████      0.087
-6. TotalPastDue                           ██████       0.076
-7. NumberOfOpenCreditLinesAndLoans        █████        0.064
-8. MonthlyIncome                          ████         0.053
-9. NumberRealEstateLoansOrLines           ███          0.041
-10. NumberOfTime60-89DaysPastDueNotWorse  ███          0.038
-```
+
+![Feature Importance](images/feature_importance.png)
+
+Key features ranked by importance:
+1. **RevolvingUtilizationOfUnsecuredLines** (0.142)
+2. **age** (0.123)  
+3. **NumberOfTime30-59DaysPastDueNotWorse** (0.118)
+4. **DebtRatio** (0.095)
+5. **NumberOfTimes90DaysLate** (0.087)
+
+### Model Performance Visualizations
+
+![Confusion Matrix](images/confusion_matrix.png)
+![ROC Curve](images/roc_curve.png)
 
 ### Model Validation
 - **Cross-Validation**: 5-fold stratified CV
