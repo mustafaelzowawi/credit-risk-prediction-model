@@ -89,10 +89,14 @@ The optimized XGBoost model (using `scale_pos_weight` only) achieved the followi
 
 ### Visualizing Model Performance
 **ROC Curve:**
-![Final Model ROC Curve](images/roc_curve_final.png)
+<p align="center">
+  <img src="images/roc_curve_final.png" alt="Final Model ROC Curve">
+</p>
 
 **Confusion Matrix:**
-![Final Model Confusion Matrix](images/confusion_matrix_final.png)
+<p align="center">
+  <img src="images/confusion_matrix_final.png" alt="Final Model Confusion Matrix">
+</p>
 
 ### Top 10 Feature Importances (Final Model)
 
