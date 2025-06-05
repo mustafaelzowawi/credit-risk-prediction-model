@@ -40,8 +40,7 @@ The project follows a structured machine learning pipeline:
     *   **Outliers & Anomalies**: Identified in `age`, `DebtRatio`, and `RevolvingUtilizationOfUnsecuredLines`.
 *   *Detailed analysis in `notebooks/01_Data_Exploration.ipynb`.*
 
-*(Consider adding `target_distribution.png` from `01_Data_Exploration.ipynb` here)*
-<!-- ![Target Variable Distribution](images/target_distribution.png) -->
+![Target Variable Distribution](images/target_distribution.png)
 
 ### 2. Data Cleaning & Preprocessing
 *   **Outlier Treatment**: Capped extreme values for `DebtRatio` (99th percentile) and `RevolvingUtilizationOfUnsecuredLines` (at 10). Filtered invalid `age` entries.
@@ -89,8 +88,6 @@ The optimized XGBoost model (using `scale_pos_weight` only) achieved the followi
 *Note: Precision, Recall, and F1-Score are reported for the positive class (`SeriousDlqin2yrs = 1`), which is paramount for credit risk assessment.*
 
 ### Visualizing Model Performance
-*(Ensure these images are regenerated from the final model in `04_Model_Training.ipynb` and placed in the `images/` directory.)*
-
 **ROC Curve:**
 ![Final Model ROC Curve](images/roc_curve_final.png)
 
@@ -98,7 +95,7 @@ The optimized XGBoost model (using `scale_pos_weight` only) achieved the followi
 ![Final Model Confusion Matrix](images/confusion_matrix_final.png)
 
 ### Top 10 Feature Importances (Final Model)
-*(Ensure this image is regenerated from the final model in `04_Model_Training.ipynb` and placed in the `images/` directory.)*
+
 ![Final Model Feature Importance](images/feature_importance_final.png)
 
 1.  **`TotalPastDue`** (Importance: ~0.670)
