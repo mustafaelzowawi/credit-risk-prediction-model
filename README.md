@@ -114,7 +114,7 @@ The optimized XGBoost model (using `scale_pos_weight` only) achieved the followi
 
 ## 📁 Project Structure
 
-'''
+```
 credit-risk-prediction-model/
 ├── data/
 │   ├── raw/                    # Original dataset (cs-training.csv, etc.)
@@ -132,7 +132,7 @@ credit-risk-prediction-model/
 ├── requirements.txt            # Python dependencies for reproducibility.
 ├── README.md                   # This project documentation.
 └── LICENSE                     # Apache 2.0 License.
-'''
+```
 
 ## 🚀 Getting Started
 
@@ -143,19 +143,19 @@ credit-risk-prediction-model/
 
 ### Installation
 1.  **Clone the repository:**
-    '''bash
+    ```bash
     git clone https://github.com/<YourUsername>/credit-risk-prediction-model.git
-cd credit-risk-prediction-model
-    '''
+    cd credit-risk-prediction-model
+    ```
 2.  **Create a virtual environment (recommended):**
-    '''bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-    '''
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows: venv\Scripts\activate
+    ```
 3.  **Install dependencies:**
-    '''bash
-pip install -r requirements.txt
-    '''
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 ## ⚙️ Usage Example
 
