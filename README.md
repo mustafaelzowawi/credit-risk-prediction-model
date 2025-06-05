@@ -3,7 +3,6 @@
 This project develops a robust machine learning model for credit risk assessment, transforming raw borrower data into predictive insights and consumer-style credit scores (300-850). It demonstrates a systematic approach to building and optimizing a high-performing classification model using the "Give Me Some Credit" Kaggle dataset (150,000 records). The focus is on the rigorous development of the predictive model, from data analysis to final evaluation, making it a strong showcase of applied machine learning skills for quantitative and technical roles.
 
 ## 📋 Table of Contents
-- [Project Objective](#-project-objective)
 - [Key Achievements](#-key-achievements)
 - [Methodology Overview](#-methodology-overview)
   - [1. Exploratory Data Analysis (EDA)](#1-exploratory-data-analysis-eda)
@@ -15,15 +14,11 @@ This project develops a robust machine learning model for credit risk assessment
 - [Getting Started](#-getting-started)
 - [Usage Example](#-usage-example)
 
-## 🎯 Project Objective
-
-To develop a high-performing binary classification model that accurately predicts the likelihood of a borrower experiencing serious delinquency within two years. The model's output (probability of default) is then converted into an easily interpretable credit score. This project emphasizes a data-driven approach to financial risk modeling, crucial in fin-tech and quantitative finance.
-
 ## 🏆 Key Achievements
 
 *   **High Predictive Accuracy**: Achieved a **Test ROC AUC of 0.8662**, demonstrating strong discrimination between defaulting and non-defaulting borrowers.
 *   **Effective Imbalance Handling**: Successfully managed a severe class imbalance (6.7% default rate) using XGBoost's `scale_pos_weight` parameter, resulting in **78% recall** for the crucial default class. This shows a practical approach to real-world skewed datasets.
-*   **Rigorous Modeling Process**: Systematic EDA, robust data cleaning, impactful feature engineering (e.g., `TotalPastDue`), and meticulous hyperparameter tuning (GridSearchCV).
+*   **Rigorous Modeling Process**: Systematic EDA, robust data cleaning, impactful feature engineering (e.g., `TotalPastDue`), and hyperparameter tuning (GridSearchCV).
 *   **Quantifiable Impact**: The model can identify nearly 4 out of 5 actual defaulters, a significant improvement for risk mitigation strategies.
 *   **Reproducible & Documented**: The entire workflow is documented across Jupyter notebooks, ensuring clarity and reproducibility. Model artifacts (trained model and scaler) are saved for use.
 *   **Practical Application Insight**: Includes conversion of default probabilities to industry-standard credit scores (300-850 range), showcasing an understanding of real-world deployment considerations.
