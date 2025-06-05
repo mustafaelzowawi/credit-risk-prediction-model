@@ -1,4 +1,4 @@
-# Credit Risk Prediction Model 🏦
+# Credit Risk Prediction Model 
 
 Credit risk is the financial loss a lender faces when a borrower fails to meet their debt obligations. To manage this, lenders rely on predictive models to assess the likelihood of default. This project tackles that challenge by developing a robust machine learning model that predicts a borrower's probability of serious delinquency.
 
@@ -17,7 +17,7 @@ The model transforms raw borrower data into two key outputs: a precise **probabi
 - [Getting Started](#-getting-started)
 - [Usage Example](#-usage-example)
 
-## 🏆 Key Achievements
+## Key Achievements
 
 *   **High Predictive Accuracy**: Achieved a **Test ROC AUC of 0.8662**, demonstrating strong discrimination between defaulting and non-defaulting borrowers.
 *   **Effective Imbalance Handling**: Successfully managed a severe class imbalance (6.7% default rate) using XGBoost's `scale_pos_weight` parameter, resulting in **78% recall** for the crucial default class. This shows a practical approach to real-world skewed datasets.
@@ -26,7 +26,7 @@ The model transforms raw borrower data into two key outputs: a precise **probabi
 *   **Reproducible & Documented**: The entire workflow is documented across Jupyter notebooks, ensuring clarity and reproducibility. Model artifacts (trained model and scaler) are saved for use.
 *   **Practical Application Insight**: Includes conversion of default probabilities to industry-standard credit scores (300-850 range), showcasing an understanding of real-world deployment considerations.
 
-## 🛠️ Methodology Overview
+## Methodology Overview
 
 The project follows a structured machine learning pipeline:
 
@@ -73,7 +73,7 @@ The project follows a structured machine learning pipeline:
     *   **Best CV ROC AUC Score**: 0.8636 (well-aligned with test performance).
 *   *Model training and evaluation are in `notebooks/04_Model_Training.ipynb`. The trained model is saved as `models/credit_model.pkl`.*
 
-## 📊 Final Model Performance
+## Final Model Performance
 
 The optimized XGBoost model (using `scale_pos_weight` only) achieved the following on the hold-out test set:
 
@@ -183,7 +183,7 @@ credit-risk-prediction-model/
     pip install -r requirements.txt
     ```
 
-## ⚙️ Usage Example
+## Usage Example
 
 The primary way to use the trained model is via the command-line interface `score.py`. This script loads the trained model and scaler, preprocesses the input data, and returns a prediction for the probability of default and a corresponding credit score.
 
