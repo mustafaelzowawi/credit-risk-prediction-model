@@ -17,32 +17,25 @@ A comprehensive end-to-end machine learning pipeline that transforms raw borrowe
 This project tackles the challenge of credit risk prediction using the **"Give Me Some Credit"** Kaggle dataset, containing 150,000 borrower records. Through systematic data exploration, feature engineering, and model optimization, we've built a comprehensive ML system that converts raw financial data into actionable credit scores.
 
 ### Key Achievements
-- **🎯 High Performance**: Achieved 0.87 ROC-AUC on hold-out test set
-- **⚖️ Balanced Approach**: Successfully handled severe class imbalance (~6% default rate)
-- **🔧 Deployment Ready**: Complete preprocessing pipeline with saved model artifacts
-- **📊 Interpretable**: Converts probabilities to familiar 300-850 credit scores
-- **🧪 Reproducible**: Full version control with comprehensive testing
-
-### Business Impact
-The model provides financial institutions with:
-- Automated credit risk assessment
-- Standardized scoring methodology
-- Reduced manual underwriting overhead
-- Consistent, data-driven lending decisions
+- **High Performance**: Achieved 0.87 ROC-AUC on hold-out test set
+- **Balanced Approach**: Successfully handled severe class imbalance (~6% default rate)
+- **Deployment Ready**: Complete preprocessing pipeline with saved model artifacts
+- **Interpretable**: Converts probabilities to familiar 300-850 credit scores
+- **Reproducible**: Full version control with comprehensive testing
 
 ## 🔍 Exploratory Data Analysis Highlights
 
 Our comprehensive EDA revealed critical insights that shaped the entire modeling approach:
 
-### 📊 Dataset Overview
+### Dataset Overview
 ```
-📈 Dataset Size: 150,000 borrower records
-🎯 Target Variable: SeriousDlqin2yrs (binary classification)
-📋 Features: 11 borrower characteristics
-🏷️ Class Distribution: 93.3% non-default, 6.7% default
+Dataset Size: 150,000 borrower records
+Target Variable: SeriousDlqin2yrs (binary classification)
+Features: 11 borrower characteristics
+Class Distribution: 93.3% non-default, 6.7% default
 ```
 
-### 🚨 Key Data Quality Issues Discovered
+### Key Data Quality Issues Discovered
 
 #### 1. **Severe Class Imbalance**
 - **Finding**: Only 6.7% of borrowers experienced serious delinquency
@@ -71,7 +64,7 @@ SeriousDlqin2yrs
 - **DebtRatio**: Extreme values suggesting data entry errors
 - **RevolvingUtilization**: Values >1.0 indicating over-limit usage
 
-### 📈 Feature Distribution Insights
+### Feature Distribution Insights
 
 #### Target Variable Analysis
 The severe class imbalance required sophisticated handling:
@@ -102,7 +95,7 @@ Through correlation analysis and business logic:
    - `NumberOfTimes90DaysLate`: Strongest individual predictor
    - Combined into `TotalPastDue` feature
 
-### 🔧 Data Preprocessing Strategy
+### Data Preprocessing Strategy
 
 Based on EDA findings, we implemented:
 
@@ -119,7 +112,7 @@ Based on EDA findings, we implemented:
 5. Scaling: StandardScaler for numerical features
 ```
 
-### 📊 Correlation Matrix Insights
+### Correlation Matrix Insights
 
 ![Correlation Matrix](images/correlation_matrix.png)
 
@@ -224,28 +217,25 @@ Key features ranked by importance:
 
 ```
 credit-risk-prediction-model/
-├── 📊 data/
+├── data/
 │   ├── raw/                    # Original dataset
 │   └── processed/              # Cleaned and processed data
-├── 📓 notebooks/
+├── notebooks/
 │   ├── 01_Data_Exploration.ipynb     # Comprehensive EDA
 │   ├── 02_Data_Cleaning.ipynb        # Data preprocessing
 │   ├── 03_Feature_Engineering.ipynb  # Feature creation
 │   ├── 04_Model_Training.ipynb       # Model development
 │   └── 05_Model_Deployment.ipynb     # Production pipeline
-├── 🤖 ml_model/
+├── ml_model/
 │   ├── predict.py              # Prediction functions
 │   ├── preprocess.py           # Data preprocessing pipeline
 │   └── train.py                # Model training pipeline
-├── 💾 models/
+├── models/
 │   ├── credit_model.pkl        # Trained XGBoost model
 │   └── scaler.pkl              # Fitted StandardScaler
-├── 🧪 tests/
-│   ├── test_app.py             # Application tests
-│   └── test_ml_model.py        # Model tests
-├── 📋 requirements.txt         # Python dependencies
-├── 📖 README.md               # Project documentation
-└── 📄 LICENSE                 # Apache 2.0 License
+├── requirements.txt            # Python dependencies
+├── README.md                   # Project documentation
+└── LICENSE                     # Apache 2.0 License
 ```
 
 ## 🚀 Getting Started
@@ -410,23 +400,7 @@ def process_daily_applications():
 - **Memory**: ~500MB for model artifacts
 - **Scalability**: Horizontal scaling via containerization
 
-## 🧪 Testing
 
-### Test Coverage
-```bash
-# Run all tests
-pytest tests/ -v
-
-# Run specific test categories
-pytest tests/test_ml_model.py -v    # Model functionality
-pytest tests/test_app.py -v        # Application tests
-```
-
-### Test Categories
-- **Unit Tests**: Individual function validation
-- **Integration Tests**: End-to-end pipeline testing
-- **Performance Tests**: Latency and throughput validation
-- **Data Quality Tests**: Input validation and edge cases
 
 ## 📊 Model Limitations & Considerations
 
