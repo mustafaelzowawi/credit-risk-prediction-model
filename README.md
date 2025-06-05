@@ -147,7 +147,7 @@ credit-risk-prediction-model/
 ### Installation
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/<YourUsername>/credit-risk-prediction-model.git
+    git clone https://github.com/mustafaelzowawi/credit-risk-prediction-model.git
     cd credit-risk-prediction-model
     ```
 2.  **Create a virtual environment (recommended):**
