@@ -14,12 +14,12 @@ A comprehensive end-to-end machine learning pipeline that transforms raw borrowe
 
 ## 🎯 Project Introduction
 
-This project tackles the challenge of credit risk prediction using the **"Give Me Some Credit"** Kaggle dataset, containing 150,000 borrower records. Through systematic data exploration, feature engineering, and model optimization, we've built a production-ready system that converts raw financial data into actionable credit scores.
+This project tackles the challenge of credit risk prediction using the **"Give Me Some Credit"** Kaggle dataset, containing 150,000 borrower records. Through systematic data exploration, feature engineering, and model optimization, we've built a comprehensive ML system that converts raw financial data into actionable credit scores.
 
 ### Key Achievements
 - **🎯 High Performance**: Achieved 0.87 ROC-AUC on hold-out test set
 - **⚖️ Balanced Approach**: Successfully handled severe class imbalance (~6% default rate)
-- **🔧 Production Ready**: Complete preprocessing pipeline with saved model artifacts
+- **🔧 Deployment Ready**: Complete preprocessing pipeline with saved model artifacts
 - **📊 Interpretable**: Converts probabilities to familiar 300-850 credit scores
 - **🧪 Reproducible**: Full version control with comprehensive testing
 
@@ -186,13 +186,13 @@ def probability_to_score(probability, base_point=600, pdo=50, base_odds=50):
 ### Final Model Metrics
 Our tuned XGBoost model achieved excellent performance:
 
-| Metric | Value | Industry Benchmark |
-|--------|-------|-------------------|
-| **ROC-AUC** | **0.852** | >0.75 (Good) |
-| **Precision** | 0.41 | Class imbalance adjusted |
-| **Recall** | 0.36 | Conservative prediction |
-| **F1-Score** | 0.38 | Balanced performance |
-| **Accuracy** | 0.92 | Overall classification |
+| Metric | Value |
+|--------|-------|
+| **ROC-AUC** | **0.852** |
+| **Precision** | 0.41 |
+| **Recall** | 0.36 |
+| **F1-Score** | 0.38 |
+| **Accuracy** | 0.92 |
 
 ### Feature Importance (Top 10)
 ```
@@ -352,7 +352,7 @@ def monitor_feature_drift(new_data, reference_stats):
 
 ## 🚀 Production Deployment
 
-### Production Pipeline Features
+### Pipeline Features
 - **Scalable Architecture**: Handles batch and real-time predictions
 - **Model Versioning**: Systematic model artifact management
 - **Input Validation**: Comprehensive data quality checks
@@ -464,4 +464,4 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 
 ---
 
-*This project demonstrates advanced machine learning techniques for credit risk assessment, showcasing the complete journey from raw data to production-ready models. The systematic approach to handling class imbalance, missing data, and feature engineering provides a robust foundation for real-world financial applications.*
+*This project demonstrates advanced machine learning techniques for credit risk assessment, showcasing the complete journey from raw data to deployment-ready models. The systematic approach to handling class imbalance, missing data, and feature engineering provides a robust foundation for real-world financial applications.*
