@@ -87,23 +87,16 @@ The optimized XGBoost model (using `scale_pos_weight` only) achieved the followi
 ### Credit Score Conversion
 The model's raw output is a probability of default. To make this more interpretable for business use, it is converted into a consumer-style credit score (300-850) using a standard logistic scaling formula.
 
-**The complete formula is:**
-```
-Score = Base_Point + Factor × ln(Odds / Base_Odds)
-```
+The score is calculated as follows:
 
-**Where:**
-- **Odds** = `(1 - Probability_of_Default) / Probability_of_Default`
-- **Factor** = `PDO / ln(2)` where PDO (Points to Double Odds) = 50
-- **Base_Point** = 600 (reference score)
-- **Base_Odds** = 50 (odds of non-default at the base score, i.e., 50:1)
+$$\text{Score} = \text{Offset} + \text{Factor} \times \ln(\text{Odds})$$
 
-**Example:** If the model predicts a 10% probability of default:
-- Odds = (1 - 0.10) / 0.10 = 9
-- Factor = 50 / ln(2) ≈ 72.13
-- Score = 600 + 72.13 × ln(9/50) ≈ 600 + 72.13 × (-1.70) ≈ 477
+Where:
+-   **Odds**: $\frac{1 - P(\text{Default})}{P(\text{Default})}$
+-   **Factor**: $\frac{\text{PDO}}{\ln(2)}$ (where PDO = 50, Points to Double the Odds)
+-   **Offset**: $\text{Base Score} - \text{Factor} \times \ln(\text{Base Odds})$ (Base Score = 600, Base Odds = 50)
 
-This transformation ensures that higher probabilities of default map to lower credit scores, following industry standards.
+This transformation ensures that a higher probability of default logarithmically maps to a lower credit score, which is the industry standard.
 
 ### Visualizing Model Performance
 
