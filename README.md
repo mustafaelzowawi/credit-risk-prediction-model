@@ -1,6 +1,8 @@
 # Credit Risk Prediction Model 🏦
 
-This project develops a robust machine learning model for credit risk assessment, transforming raw borrower data into predictive insights and consumer-style credit scores (300-850). It demonstrates a systematic approach to building and optimizing a high-performing classification model using the "Give Me Some Credit" Kaggle dataset (150,000 records). The focus is on the rigorous development of the predictive model, from data analysis to final evaluation, making it a strong showcase of applied machine learning skills for quantitative and technical roles.
+Credit risk is the financial loss a lender faces when a borrower fails to meet their debt obligations. To manage this, lenders rely on predictive models to assess the likelihood of default. This project tackles that challenge by developing a robust machine learning model that predicts a borrower's probability of serious delinquency.
+
+The model transforms raw borrower data into two key outputs: a precise **probability of default** and an intuitive, consumer-style **credit score (300-850)**, where a lower score signifies higher risk. It demonstrates a systematic approach to building and optimizing a high-performing classification model using the "Give Me Some Credit" Kaggle dataset (150,000 records). The focus is on the rigorous development of the predictive model, from data analysis to final evaluation, making it a strong showcase of applied machine learning skills for quantitative and technical roles.
 
 ## 📋 Table of Contents
 - [Key Achievements](#-key-achievements)
@@ -89,12 +91,19 @@ The model's raw output is a probability of default. To make this more interpreta
 
 The score is calculated as follows:
 
+<div align="center">
+
 $$\text{Score} = \text{Offset} + \text{Factor} \times \ln(\text{Odds})$$
 
-Where:
--   **Odds**: $\frac{1 - P(\text{Default})}{P(\text{Default})}$
--   **Factor**: $\frac{\text{PDO}}{\ln(2)}$ (where PDO = 50, Points to Double the Odds)
--   **Offset**: $\text{Base Score} - \text{Factor} \times \ln(\text{Base Odds})$ (Base Score = 600, Base Odds = 50)
+**Where:**
+
+**Odds**: $\frac{1 - P(\text{Default})}{P(\text{Default})}$
+
+**Factor**: $\frac{\text{PDO}}{\ln(2)}$ (where PDO = 50, Points to Double the Odds)
+
+**Offset**: $\text{Base Score} - \text{Factor} \times \ln(\text{Base Odds})$ (Base Score = 600, Base Odds = 50)
+
+</div>
 
 This transformation ensures that a higher probability of default logarithmically maps to a lower credit score, which is the industry standard.
 
