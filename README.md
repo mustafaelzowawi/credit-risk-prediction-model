@@ -184,7 +184,7 @@ You can score a new applicant by providing their information as command-line arg
 
 **Example command:**
 ```bash
-python score.py \
+python3 score.py \
     --revolving-utilization 0.5 \
     --age 45 \
     --past-due-30-59 1 \
