@@ -91,19 +91,21 @@ The model's raw output is a probability of default. To make this more interpreta
 
 The score is calculated as follows:
 
-<div align="center">
-
 $$\text{Score} = \text{Offset} + \text{Factor} \times \ln(\text{Odds})$$
 
-**Where:**
+<p align="center"><strong>Where:</strong></p>
 
-**Odds**: $\frac{1 - P(\text{Default})}{P(\text{Default})}$
+<p align="center">
+<strong>Odds</strong>: $\frac{1 - P(\text{Default})}{P(\text{Default})}$
+</p>
 
-**Factor**: $\frac{\text{PDO}}{\ln(2)}$ (where PDO = 50, Points to Double the Odds)
+<p align="center">
+<strong>Factor</strong>: $\frac{\text{PDO}}{\ln(2)}$ (where PDO = 50, Points to Double the Odds)
+</p>
 
-**Offset**: $\text{Base Score} - \text{Factor} \times \ln(\text{Base Odds})$ (Base Score = 600, Base Odds = 50)
-
-</div>
+<p align="center">
+<strong>Offset</strong>: $\text{Base Score} - \text{Factor} \times \ln(\text{Base Odds})$ (Base Score = 600, Base Odds = 50)
+</p>
 
 This transformation ensures that a higher probability of default logarithmically maps to a lower credit score, which is the industry standard.
 
