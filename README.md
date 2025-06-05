@@ -33,7 +33,7 @@ To develop a high-performing binary classification model that accurately predict
 The project follows a structured machine learning pipeline:
 
 ### 1. Exploratory Data Analysis (EDA)
-*   **Dataset**: ["Give Me Some Credit"](https://www.kaggle.com/c/give-me-some-credit/data) Kaggle competition (150,000 records, 11 features).
+*   **Dataset**: [Give Me Some Credit](https://www.kaggle.com/c/give-me-some-credit/data) Kaggle competition (150,000 records, 11 features).
 *   **Key Findings**:
     *   **Class Imbalance**: Target variable `SeriousDlqin2yrs` highly imbalanced (6.7% defaults). *(See distribution below)*
     *   **Missing Data**: Significant missingness in `MonthlyIncome` (19.8%) and `NumberOfDependents` (2.6%).
